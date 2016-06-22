@@ -1,0 +1,26 @@
+{
+  "name": "@brudil/spectrum",
+  "version": "0.1.0",
+  "description": "JSON based multimedia content format",
+  "main": "dist/spectrum.js",
+  "scripts": {
+    "test": "`npm bin`/tsc && `npm bin`/ava ./dist/test/**/*.js",
+    "compile": "`npm bin`/tsc",
+    "dev": "`npm bin`/tsc -w",
+    "install-types": "`npm bin`/typings install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/brudil/spectrum-javascript.git"
+  },
+  "author": "James Canning <hello@brudil.com> (http://brudil.com)",
+  "license": "ISC",
+  "devDependencies": {
+    "ava": "^0.15.2",
+    "typings": "^1.3.0"
+  },
+  "dependencies": {
+    "lodash": "^4.13.1",
+    "typescript": "^1.8.10"
+  }
+}

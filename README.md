@@ -1,7 +1,7 @@
-Spectrum for JavaScript
+Spectrum for JavaScript/TypeScript
 =======================
 
-A Spectrum format implementation for JavaScript/ES6.
+A Spectrum format implementation for TypeScript/JavaScript.
 
 Follows https://github.com/brudil/spectrum-spec
 
