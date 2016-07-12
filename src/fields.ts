@@ -241,15 +241,16 @@ export class TextualContentField extends Field {
     }
 
     mapTransformerToName(name: String) {
-        if (name === this.defaultTransformer._name) {
+        const expectedName = this.defaultTransformer._name;
+        if (name === expectedName) {
             return this.defaultTransformer;
         }
 
-        throw 'Only default transformer supported at the moment.';
+        throw `Only default transformer supported at the moment. (given ${name}, expected ${expectedName})`;
     }
 
     parse(structure: any): TransformerData {
-        return new TransformerData(this.mapTransformerToName(structure['name']), structure['text']);
+        return new TransformerData(this.mapTransformerToName(structure['transformer']), structure['text']);
     }
 
     isValid() {
