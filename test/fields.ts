@@ -18,17 +18,11 @@ class ExampleTwoElement extends BaseElement {
     }
 }
 
-test('elementfield throw when no default and not blank', t => {
-    const elementField = new fields.ElementField([ExampleOneElement, ExampleTwoElement]);
-    
-    t.throws(() => elementField.createDefaultValue());
-})
-
 test('elementfield creates null value when blank', t => {
     const elementField = new fields.ElementField([ExampleOneElement, ExampleTwoElement], null, true);
     
     t.is(elementField.createDefaultValue(), null);
-})
+});
 
 test('elementfield creates default', t => {
     const elementField = new fields.ElementField([ExampleOneElement, ExampleTwoElement], ExampleTwoElement, true);
@@ -36,4 +30,4 @@ test('elementfield creates default', t => {
 
     t.true(elementField.createDefaultValue() instanceof ExampleTwoElement);
     t.true(elementFieldBlank.createDefaultValue() instanceof ExampleTwoElement);
-})
+});

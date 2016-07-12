@@ -46,11 +46,7 @@ export class ElementField extends Field {
 
     createDefaultValue(): ElementInterface {
         if (this.defaultElement === null) {
-            if (this.blank) {
-                return null;
-            } else {
-                throw 'No default supplied and can not be blank';
-            }
+            return null;
         }
 
         return new this.defaultElement();
