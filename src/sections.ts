@@ -30,7 +30,7 @@ export class ListSection extends Section {
 
     fields() {
         return {
-            stream: new fields.FieldStreamField(new fields.ElementField(blocks.sets.all)),
+            stream: new fields.FieldStreamField(new fields.ElementField([ListSectionItem], ListSectionItem)),
             points: new fields.ChoiceValueField(['alpha', 'numbers', 'roman'], 'alpha'),
             order: new fields.ChoiceValueField(['az', 'za'], 'az')
         }
