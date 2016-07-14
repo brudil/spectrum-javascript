@@ -4,5 +4,6 @@ import * as subtypes from './subtypes';
 import * as fields from './fields';
 import * as sections from './sections';
 import * as transformers from './transformers';
+import * as resources from './transformers';
 
 export {SpectrumDocument, blocks, subtypes, fields, sections, transformers};
