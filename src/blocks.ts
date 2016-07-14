@@ -1,6 +1,7 @@
 import {BaseElement} from './base';
 import * as fields from './fields';
 import * as transformers from './transformers';
+import * as resources from './resources';
 
 export abstract class Block extends BaseElement {}
 
@@ -21,6 +22,7 @@ export class ImageBlock extends Block {
     fields() {
         return {
             // TODO: resources: ImageResource
+            resource: new fields.ElementField([resources.LowdownImageResource], resources.LowdownImageResource),
             alt: new fields.TextualContentField(transformers.PlainTextTransformer, [transformers.PlainTextTransformer]),
             title: new fields.TextualContentField(transformers.PlainTextTransformer, [transformers.PlainTextTransformer]),
             caption: new fields.TextualContentField(transformers.InlinedownTextTransformer, [transformers.InlinedownTextTransformer]),

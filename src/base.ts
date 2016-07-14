@@ -22,6 +22,10 @@ export interface FieldInterface {
     parse(structure: Object): void
 }
 
+export interface ResourceInterface {
+
+}
+
 export interface FieldMapInterface {
     [key: string]: FieldInterface;
 }
@@ -47,6 +51,26 @@ export abstract class BaseElement implements ElementInterface {
                 this._fields[fieldName] = kwags[fieldName];
             }
         }
+    }
+
+    getElements(): Array<BaseElement> {
+        let found = <Array<BaseElement>> [];
+        for (const fieldName of Object.keys(this._fields)) {
+            const fieldValue = this[fieldName];
+            if (fieldValue instanceof BaseElement) {
+                found.push(fieldValue);
+                found.push(...fieldValue.getElements());
+            } else if (Array.isArray(fieldValue)) {
+                for (const streamElement of fieldValue) {
+                    if (streamElement instanceof BaseElement) {
+                        found.push(streamElement);
+                        found.push(...streamElement.getElements());
+                    }
+                }
+            }
+        }
+
+        return found;
     }
 
     toJS(): Object {

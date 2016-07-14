@@ -123,20 +123,26 @@ export class FieldStreamField extends Field {
 }
 
 export abstract class ValueField extends Field {
-    blank: boolean;
+    blank:boolean;
 
-    toJS(value: any) {
+    toJS(value:any) {
         return value;
     }
 
-    parse(structure: any) {
+    parse(structure:any) {
         return structure;
     }
 
-    isValid(value: any) {
+    isValid(value:any) {
         if (this.blank === true && value !== null) {
             return false;
         }
+    }
+}
+
+export class IntegerField extends ValueField {
+    createDefaultValue(): number {
+        return null;
     }
 }
 
