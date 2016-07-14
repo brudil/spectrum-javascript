@@ -1,5 +1,4 @@
-import {assign} from 'lodash';
-import {Transformer, TransformerConstructor, TransformerInterface} from './transformers';
+import {TransformerConstructor} from './transformers';
 import {BaseElement, ElementConstructor, ElementInterface} from './base';
 
 export type ElementList = Array<ElementConstructor>;
@@ -38,7 +37,7 @@ export class ElementField extends Field {
             return null;
         }
         const constructor = <ElementConstructor> value.constructor;
-        return assign({
+        return Object.assign({
             '_name': constructor._name,
             '_id': value.getUUID()
         }, value.toJS());
@@ -178,11 +177,7 @@ export class ChoiceValueField extends ValueField {
             return false;
         }
 
-        if (this.choices.indexOf(value) === -1) {
-            return false;
-        }
-
-        return true;
+        return this.choices.indexOf(value) !== -1;
     }
 }
 
