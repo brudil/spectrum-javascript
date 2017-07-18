@@ -1,3 +1,5 @@
+*this is all pretty horrible, i'm going to rewrite this to perhaps be immutable as it's currently only used with Redux*
+
 Spectrum for JavaScript/TypeScript
 =======================
 
