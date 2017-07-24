@@ -43,7 +43,7 @@ export class ElementField extends Field {
         }, value.toJS());
     }
 
-    createDefaultValue(): ElementInterface {
+    createDefaultValue(): ElementInterface | null {
         if (this.defaultElement === null) {
             return null;
         }
@@ -132,15 +132,17 @@ export abstract class ValueField extends Field {
         return structure;
     }
 
-    isValid(value:any) {
+    isValid(value:any): boolean{
         if (this.blank === true && value !== null) {
             return false;
         }
+
+        return true;
     }
 }
 
 export class IntegerField extends ValueField {
-    createDefaultValue(): number {
+    createDefaultValue(): number | null {
         return null;
     }
 }
@@ -187,7 +189,7 @@ export class URLValueField extends ValueField {
         this.blank = blank;
     }
 
-    createDefaultValue(): string {
+    createDefaultValue(): string | null {
         return null;
     }
 
