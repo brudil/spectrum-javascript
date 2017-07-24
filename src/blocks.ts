@@ -16,6 +16,17 @@ export class HeadingBlock extends Block {
     }
 }
 
+export class PullQuoteBlock extends Block {
+    static _name = 'pullquote';
+
+    fields() {
+        return {
+            attribution: new fields.TextualContentField(transformers.InlinedownTextTransformer, [transformers.InlinedownTextTransformer]),
+            quote: new fields.TextualContentField(transformers.InlinedownTextTransformer, [transformers.InlinedownTextTransformer])
+        }
+    }
+}
+
 export class ImageBlock extends Block {
     static _name = 'image';
 
@@ -58,5 +69,5 @@ export class TextBlock extends Block {
 
 
 export const sets = {
-    all: [HeadingBlock, ImageBlock, VideoBlock, TextBlock]
+    all: [HeadingBlock, ImageBlock, VideoBlock, TextBlock, PullQuoteBlock]
 };
