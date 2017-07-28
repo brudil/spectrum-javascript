@@ -6,6 +6,7 @@
   "scripts": {
     "test": "`npm bin`/tsc && `npm bin`/ava ./dist/test/**/*.js",
     "compile": "`npm bin`/tsc",
+    "prepare": "`npm bin`/tsc",
     "dev": "`npm bin`/tsc -w",
     "install-types": "`npm bin`/typings install"
   },
