@@ -44,7 +44,7 @@ export class ImageBlock extends Block {
 }
 
 export class CanvasBlock extends Block {
-    static _name = 'image';
+    static _name = 'canvas';
 
     fields() {
         return {
