@@ -43,6 +43,17 @@ export class ImageBlock extends Block {
     }
 }
 
+export class CanvasBlock extends Block {
+    static _name = 'image';
+
+    fields() {
+        return {
+            resource: new fields.ElementField([resources.LowdownInteractiveResource], resources.LowdownInteractiveResource),
+            container: new fields.ChoiceValueField(['CONTENT', 'CONTAINER', 'BLEED'], 1, false),
+        }
+    }
+}
+
 export class VideoBlock extends Block {
     static _name = 'video';
 
@@ -69,5 +80,5 @@ export class TextBlock extends Block {
 
 
 export const sets = {
-    all: [HeadingBlock, ImageBlock, VideoBlock, TextBlock, PullQuoteBlock]
+    all: [HeadingBlock, ImageBlock, VideoBlock, TextBlock, PullQuoteBlock, CanvasBlock]
 };

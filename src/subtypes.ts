@@ -2,6 +2,7 @@ import {BaseElement} from './base';
 import * as fields from './fields';
 import * as sections from './sections';
 import * as blocks from './blocks';
+import * as resources from './resources';
 
 export abstract class Subtype extends BaseElement {}
 
@@ -26,6 +27,18 @@ export class VideoSubtype extends Subtype {
     }
 }
 
+export class CanvasSubtype extends Subtype {
+    static _name = 'canvas';
+
+    fields() {
+        return {
+            resource: new fields.ElementField([resources.LowdownInteractiveResource], resources.LowdownInteractiveResource),
+            viewMode: new fields.ChoiceValueField(['CONTENT', 'CONTAINER', 'CANVAS'], 'CONTAINER')
+        }
+    }
+}
+
+
 export const sets = {
-    all: [ArticleSubtype, VideoSubtype, ]
+    all: [ArticleSubtype, VideoSubtype, CanvasSubtype]
 };

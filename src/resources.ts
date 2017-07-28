@@ -16,3 +16,13 @@ export class LowdownImageResource extends Resource {
         }
     }
 }
+
+export class LowdownInteractiveResource extends Resource {
+    static _name = 'lowdowninteractive';
+
+    fields() {
+        return {
+            slug: new fields.StringField(),
+        }
+    }
+}

@@ -147,6 +147,12 @@ export class IntegerField extends ValueField {
     }
 }
 
+export class StringField extends ValueField {
+    createDefaultValue(): number | null {
+        return null;
+    }
+}
+
 export class ChoiceValueField extends ValueField {
     choices: Array<any>;
     defaultValue: any;
