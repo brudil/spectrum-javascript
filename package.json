@@ -1,6 +1,6 @@
 {
   "name": "@brudil/spectrum",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "JSON based multimedia content format",
   "main": "dist/src/spectrum.js",
   "scripts": {
