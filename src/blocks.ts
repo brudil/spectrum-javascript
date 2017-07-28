@@ -49,7 +49,7 @@ export class CanvasBlock extends Block {
     fields() {
         return {
             resource: new fields.ElementField([resources.LowdownInteractiveResource], resources.LowdownInteractiveResource),
-            container: new fields.ChoiceValueField(['CONTENT', 'CONTAINER', 'BLEED'], 1, false),
+            container: new fields.ChoiceValueField(['CONTENT', 'CONTAINER', 'BLEED'], 'CONTAINER', false),
         }
     }
 }

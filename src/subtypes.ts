@@ -33,7 +33,7 @@ export class CanvasSubtype extends Subtype {
     fields() {
         return {
             resource: new fields.ElementField([resources.LowdownInteractiveResource], resources.LowdownInteractiveResource),
-            viewMode: new fields.ChoiceValueField(['CONTENT', 'CONTAINER', 'CANVAS'], 'CONTAINER')
+            viewMode: new fields.ChoiceValueField(['CONTENT', 'CONTAINER', 'CANVAS'], 'CONTAINER', false)
         }
     }
 }
