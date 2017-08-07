@@ -28,7 +28,7 @@ export class VideoSubtype extends Subtype {
 }
 
 export class CanvasSubtype extends Subtype {
-    static _name = 'canvas';
+    static _name = 'canvas_subtype';
 
     fields() {
         return {
