@@ -1,4 +1,4 @@
-*this is all pretty horrible, i'm going to rewrite this to perhaps be immutable as it's currently only used with Redux*
+*this isn't great. a new version that applies changesets to Immutable.js data structure is currently within the Jetpath repo > [spectrum2](https://github.com/brudil/jetpath/tree/master/src/libs/spectrum2)*
 
 Spectrum for JavaScript/TypeScript
 =======================
